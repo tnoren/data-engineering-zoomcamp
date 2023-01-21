@@ -1,0 +1,4 @@
+# ignore trip data CSV files
+*yellow_tripdata*
+*24584*
+*24612*
