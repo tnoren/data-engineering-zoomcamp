@@ -14,11 +14,12 @@ Now run the command to get help on the "docker build" command
 
 Which tag has the following text? - *Write the image ID to the file* 
 
+```
   docker build --help | grep Write
       --iidfile string          Write the image ID to the file
-
+```
 - `--imageid string`
-- **`--iidfile string`** 
+- **`--iidfile string`** <<<
 - `--idimage string`
 - `--idfile string`
 
@@ -29,7 +30,7 @@ Run docker with the python:3.9 image in an interactive mode and the entrypoint o
 Now check the python modules that are installed ( use pip list). 
 How many python packages/modules are installed?
 
-docker run -it --entrypoint=bash python:3.9
+```
   $ docker run -it --entrypoint=bash python:3.9
     root@746c96247a21:/# pip list
     Package    Version
@@ -37,10 +38,10 @@ docker run -it --entrypoint=bash python:3.9
     pip        22.0.4
     setuptools 58.1.0
     wheel      0.38.4
-
+```
 - 1
 - 6
-- **3**
+- **3** <<<
 - 7
 
 # Prepare Postgres
@@ -76,7 +77,7 @@ AND   lpep_dropoff_datetime LIKE '%2019-01-15%'
 ```
 
 - 20689
-- **20530**
+- **20530** <<<
 - 17630
 - 21090
 
@@ -95,15 +96,17 @@ ORDER BY MAX(trip_distance) DESC
 ;
 --"2019-01-15 19:27:58"	117.99
 ```
+
 - 2019-01-18
 - 2019-01-28
-- **2019-01-15**
+- **2019-01-15** <<<
 - 2019-01-10
 
 ## Question 5. The number of passengers
 
 In 2019-01-01 how many trips had 2 and 3 passengers?
 
+``` sql
 SELECT
 	COUNT(*)
 FROM green_taxi_data
@@ -112,10 +115,11 @@ WHERE lpep_pickup_datetime LIKE '%2019-01-01%'
 AND passenger_count = 3 -- 254
 ;
 --2:1282; 3:254
- 
+``` 
+
 - 2: 1282 ; 3: 266
 - 2: 1532 ; 3: 126
-- **2: 1282 ; 3: 254**
+- **2: 1282 ; 3: 254** <<<
 - 2: 1282 ; 3: 274
 
 
@@ -146,7 +150,7 @@ ORDER BY a.tip_amount DESC
 - Central Park
 - Jamaica
 - South Ozone Park
-- **Long Island City/Queens Plaza** 
+- **Long Island City/Queens Plaza** <<<
 
 
 ## Submitting the solutions
