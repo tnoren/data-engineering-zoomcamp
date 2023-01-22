@@ -95,8 +95,8 @@ SELECT
 	COUNT(*)
 FROM green_taxi_data
 WHERE lpep_pickup_datetime LIKE '%2019-01-01%'
--- AND lpep_dropoff_datetime LIKE '%2019-01-01%'
-AND passenger_count = 2
+-- AND passenger_count = 2 -- 1282
+AND passenger_count = 3 -- 254
 ;
 --2:1282; 3:254
  
@@ -113,10 +113,26 @@ We want the name of the zone, not the id.
 
 Note: it's not a typo, it's `tip` , not `trip`
 
+SELECT
+	 a.tip_amount
+	,a."PULocationID"
+	,a."DOLocationID"
+	,b."Zone" "PUZone"
+	,c."Zone" "DOZone"
+FROM green_taxi_data a
+JOIN taxi_zone_lookup b
+	ON a."PULocationID" = b."LocationID"
+JOIN taxi_zone_lookup c
+	ON a."DOLocationID" = c."LocationID"
+WHERE b."Zone" = 'Astoria'
+ORDER BY a.tip_amount DESC
+;
+
+
 - Central Park
 - Jamaica
 - South Ozone Park
-- Long Island City/Queens Plaza
+- Long Island City/Queens Plaza <<<
 
 
 ## Submitting the solutions

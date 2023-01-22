@@ -1,4 +1,4 @@
-# ignore trip data CSV files
+# ignore trip data CSV files and certain large postgres database files
 *yellow_tripdata*
 *24584*
 *24612*
