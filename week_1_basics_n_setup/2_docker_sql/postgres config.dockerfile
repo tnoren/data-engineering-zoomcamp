@@ -89,3 +89,7 @@ docker run -it \
 	--db=ny_taxi \
 	--table_name=taxi_zone_lookup \
 	--url=${URL}
+
+
+# generate .gitignore 
+find * -size +50M | cat > .gitignore
