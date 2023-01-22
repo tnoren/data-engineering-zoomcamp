@@ -1,4 +1,3 @@
-# ignore trip data CSV files and certain large postgres database files
-*yellow_tripdata*
-*24584*
-*24612*
+week_1_basics_n_setup/1_terraform_gcp/.terraform/providers/registry.terraform.io/hashicorp/google/4.49.0/windows_amd64/terraform-provider-google_v4.49.0_x5.exe
+week_1_basics_n_setup/2_docker_sql/ny_taxi_postgres_data/base/16384/24584
+week_1_basics_n_setup/2_docker_sql/ny_taxi_postgres_data/base/16384/24612
