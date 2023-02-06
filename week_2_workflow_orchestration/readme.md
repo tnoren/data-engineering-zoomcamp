@@ -46,3 +46,21 @@ postgres-connectorpostgres-connector
 
 ## etl_web_to_gcs
 https://youtu.be/W-rMz_2GwqQ?list=PL3MmuxUbc_hJed7dXYoJw8DoCuVHhGEQb&t=549
+
+### update pyton scripts in docker container:
+``` bash
+
+docker cp etl_web_to_gcs.py c55ec7858815:app
+docker cp etl_gcs_to_bq.py c55ec7858815:app
+docker cp parameterized_flow.py c55ec7858815:app
+
+
+prefect deployment build ./parameterized_flow.py:etl_parent_flow -n "Parameterized ETL"
+
+
+
+docker cp c55ec7858815:app/etl_parent_flow-deployment.yaml .
+docker cp etl_parent_flow-deployment.yaml c55ec7858815:app
+
+prefect deployment apply etl_parent_flow-deployment.yaml
+```
